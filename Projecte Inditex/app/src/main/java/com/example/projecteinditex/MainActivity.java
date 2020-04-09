@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     // Método per accedir a l'opció de resposició (.25)
     public void Reposicio(View view) {
 
-        Intent repo = new  Intent(this, Reposicion.class);
+        Intent repo = new  Intent(this, Seccio.class);
         startActivity(repo);
     }
 
