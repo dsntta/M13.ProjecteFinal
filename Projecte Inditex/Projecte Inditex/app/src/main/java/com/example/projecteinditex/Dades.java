@@ -23,7 +23,7 @@ import java.net.URL;
 
 public class Dades extends AppCompatActivity {
 
-    Button btnconsultar;
+    Button btnconsultar,btnreset;
     EditText etId, etDesc, etTallaS,etTallaM,etTallaL,etTallaXL,etTallaXXL;
 
 
@@ -35,6 +35,7 @@ public class Dades extends AppCompatActivity {
 
 
         btnconsultar = (Button)findViewById(R.id.btnConsultar);
+        btnreset = (Button)findViewById(R.id.btnReset);
         etId = (EditText)findViewById(R.id.etId);
         etDesc = (EditText)findViewById(R.id.etDesc);
         etTallaS = (EditText)findViewById(R.id.etTallaS);
@@ -42,6 +43,17 @@ public class Dades extends AppCompatActivity {
         etTallaL = (EditText)findViewById(R.id.etTallaL);
         etTallaXL = (EditText)findViewById(R.id.etTallaXL);
         etTallaXXL = (EditText)findViewById(R.id.etTallaXXL);
+
+        etDesc.setEnabled(false);
+        etTallaS.setEnabled(false);
+        etTallaM.setEnabled(false);
+        etTallaL.setEnabled(false);
+        etTallaXL.setEnabled(false);
+        etTallaXXL.setEnabled(false);
+
+
+
+
 
 
         btnconsultar.setOnClickListener(new View.OnClickListener() {
@@ -57,11 +69,41 @@ public class Dades extends AppCompatActivity {
                     new ConsultarDatos().execute("https://unsectarian-stack.000webhostapp.com/Android/consulta.php?id="+etId.getText().toString());
                     //new ConsultarDatos().execute("http://192.168.0.14/CursoAndroid/consulta.php?id="+etId.getText().toString());
                 }
+            }
+        });
+
+
+        btnreset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                etId.setText("");
+                etDesc.setText("");
+                etTallaS.setText("");
+                etTallaM.setText("");
+                etTallaL.setText("");
+                etTallaXL.setText("");
+                etTallaXXL.setText("");
 
 
 
             }
         });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     }
 
