@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     // Método per accedir a l'opció de consulta de Stock
     public void ConsultaStock(View view) {
 
-        Intent repo = new  Intent(this, ITXStock.class);
+        Intent repo = new  Intent(this, Dades.class);
         startActivity(repo);
     }
 
