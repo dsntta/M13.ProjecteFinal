@@ -23,8 +23,8 @@ import java.net.URL;
 
 public class Dades extends AppCompatActivity {
 
-    Button btnconsultar, btnGuardar;
-    EditText etId, etNombres, etTelefono;
+    Button btnconsultar;
+    EditText etId, etDesc, etTallaS,etTallaM,etTallaL,etTallaXL,etTallaXXL;
 
 
 
@@ -35,26 +35,30 @@ public class Dades extends AppCompatActivity {
 
 
         btnconsultar = (Button)findViewById(R.id.btnConsultar);
-        btnGuardar = (Button)findViewById(R.id.btnGuardar);
         etId = (EditText)findViewById(R.id.etId);
-        etNombres = (EditText)findViewById(R.id.etNombres);
-        etTelefono = (EditText)findViewById(R.id.etTelefono);
+        etDesc = (EditText)findViewById(R.id.etDesc);
+        etTallaS = (EditText)findViewById(R.id.etTallaS);
+        etTallaM = (EditText)findViewById(R.id.etTallaM);
+        etTallaL = (EditText)findViewById(R.id.etTallaL);
+        etTallaXL = (EditText)findViewById(R.id.etTallaXL);
+        etTallaXXL = (EditText)findViewById(R.id.etTallaXXL);
+
 
         btnconsultar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                new ConsultarDatos().execute("http://192.168.0.14/CursoAndroid/consulta.php?id="+etId.getText().toString());
+                if (etId.getText().toString().isEmpty()) {
+                    Toast.makeText(getApplicationContext(), "Indrodueix el codi de l'article", Toast.LENGTH_LONG).show();
+                    etId.setText("");
 
-            }
-        });
+                }else {
+
+                    new ConsultarDatos().execute("https://unsectarian-stack.000webhostapp.com/Android/consulta.php?id="+etId.getText().toString());
+                    //new ConsultarDatos().execute("http://192.168.0.14/CursoAndroid/consulta.php?id="+etId.getText().toString());
+                }
 
 
-        btnGuardar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                new CargarDatos().execute("http://192.168.0.14/CursoAndroid/registro.php?nombres="+etNombres.getText().toString()+"&tel="+etTelefono.getText().toString());
 
             }
         });
@@ -100,8 +104,15 @@ public class Dades extends AppCompatActivity {
             JSONArray ja = null;
             try {
                 ja = new JSONArray(result);
-                etNombres.setText(ja.getString(1));
-                etTelefono.setText(ja.getString(2));
+                etDesc.setText(ja.getString(1));
+                etTallaS.setText("Talla S:  "+ja.getString(2));
+                etTallaM.setText("Talla M:  "+ja.getString(3));
+
+                etTallaL.setText("Talla L:  "+ja.getString(4));
+
+                etTallaXL.setText("Talla XL:  "+ja.getString(5));
+
+                etTallaXXL.setText("Talla XXL:  "+ja.getString(6));
 
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -152,7 +163,4 @@ public class Dades extends AppCompatActivity {
         reader.read(buffer);
         return new String(buffer);
     }
-
-
-
 }
