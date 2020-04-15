@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Projecte Inditex</string>
+    <string name="BotonSiguiente">.25</string>
+    <string name="BotonActualizar">25R</string>
+
+    <string name="version">Versió 1.0</string>
+
+
+    <string name="BotonAnterior">X</string>
+    <string name="tv2">Reposició de Roba (.25) </string>
+
+
+    <string name="BotonStock">ITX Stock</string>
+
+    <string name="BotonInformacion">Informació</string>
+
+</resources>
