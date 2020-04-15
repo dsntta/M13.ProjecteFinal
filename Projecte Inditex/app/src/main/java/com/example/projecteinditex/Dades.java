@@ -24,9 +24,10 @@ import java.net.URL;
 public class Dades extends AppCompatActivity {
 
     Button btnconsultar,btnreset;
-    EditText etId, etDesc;
+    EditText etId, etDesc,etPreu;
     EditText etTallaS_Botiga,etTallaM_Botiga,etTallaL_Botiga,etTallaXL_Botiga,etTallaXXL_Botiga;
     EditText etTallaS_Magatzem,etTallaM_Magatzem,etTallaL_Magatzem,etTallaXL_Magatzem,etTallaXXL_Magatzem;
+
 
 
 
@@ -40,6 +41,7 @@ public class Dades extends AppCompatActivity {
         btnreset = (Button)findViewById(R.id.btnReset);
         etId = (EditText)findViewById(R.id.etId);
         etDesc = (EditText)findViewById(R.id.etDesc);
+        etPreu = (EditText)findViewById(R.id.etPreu);
         etTallaS_Botiga = (EditText)findViewById(R.id.etTallaS);
         etTallaM_Botiga = (EditText)findViewById(R.id.etTallaM);
         etTallaL_Botiga = (EditText)findViewById(R.id.etTallaL);
@@ -67,6 +69,8 @@ public class Dades extends AppCompatActivity {
         etTallaL_Magatzem.setEnabled(false);
         etTallaXL_Magatzem.setEnabled(false);
         etTallaXXL_Magatzem.setEnabled(false);
+
+        etPreu.setEnabled(false);
 
 
 
@@ -108,6 +112,8 @@ public class Dades extends AppCompatActivity {
                 etTallaL_Magatzem.setText("");
                 etTallaXL_Magatzem.setText("");
                 etTallaXXL_Magatzem.setText("");
+
+                etPreu.setText("");
 
 
 
@@ -172,10 +178,12 @@ public class Dades extends AppCompatActivity {
                 etTallaXXL_Botiga.setText("XXL "+ja.getString(10));
                 etTallaXXL_Magatzem.setText("XXL "+ja.getString(11));
 
+                etPreu.setText(ja.getString(12));
+
             } catch (JSONException e) {
                 e.printStackTrace();
+                Toast.makeText(getApplicationContext(), "No s'ha trobat l'article", Toast.LENGTH_LONG).show();
             }
-
         }
     }
 
@@ -197,6 +205,9 @@ public class Dades extends AppCompatActivity {
             // Starts the query
             conn.connect();
             int response = conn.getResponseCode();
+
+
+
             Log.d("respuesta", "The response is: " + response);
             is = conn.getInputStream();
 
