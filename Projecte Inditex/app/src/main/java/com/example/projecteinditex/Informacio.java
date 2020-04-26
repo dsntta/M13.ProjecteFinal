@@ -20,4 +20,11 @@ public class Informacio extends AppCompatActivity {
         Intent anterior = new Intent(this, MainActivity.class);
         startActivity(anterior);
     }
+
+    // Método per accedir a l'opció de consulta de Stock
+    public void Login(View view) {
+
+        Intent repo = new  Intent(this, LoginEncarregat.class);
+        startActivity(repo);
+    }
 }

@@ -54,9 +54,6 @@ public class Dades extends AppCompatActivity {
         etTallaXL_Magatzem = (EditText)findViewById(R.id.etTallaXL2);
         etTallaXXL_Magatzem = (EditText)findViewById(R.id.etTallaXXL2);
 
-
-
-
         etDesc.setEnabled(false);
         etTallaS_Botiga.setEnabled(false);
         etTallaM_Botiga.setEnabled(false);
@@ -71,11 +68,6 @@ public class Dades extends AppCompatActivity {
         etTallaXXL_Magatzem.setEnabled(false);
 
         etPreu.setEnabled(false);
-
-
-
-
-
 
         btnconsultar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -115,29 +107,25 @@ public class Dades extends AppCompatActivity {
 
                 etPreu.setText("");
 
-
-
             }
         });
-
     }
 
     private class CargarDatos extends AsyncTask<String, Void, String> {
         @Override
         protected String doInBackground(String... urls) {
 
-            // params comes from the execute() call: params[0] is the url.
             try {
                 return downloadUrl(urls[0]);
             } catch (IOException e) {
                 return "Unable to retrieve web page. URL may be invalid.";
             }
         }
-        // onPostExecute displays the results of the AsyncTask.
+
         @Override
         protected void onPostExecute(String result) {
 
-            Toast.makeText(getApplicationContext(), "Se almacenaron los datos correctamente", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Dades guardades correctament", Toast.LENGTH_LONG).show();
 
         }
     }

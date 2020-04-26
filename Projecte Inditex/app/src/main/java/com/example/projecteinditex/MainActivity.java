@@ -35,8 +35,4 @@ public class MainActivity extends AppCompatActivity {
         Intent repo = new  Intent(this, Informacio.class);
         startActivity(repo);
     }
-
-
-
-
 }
