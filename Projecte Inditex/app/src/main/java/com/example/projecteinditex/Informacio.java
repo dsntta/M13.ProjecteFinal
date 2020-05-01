@@ -22,5 +22,12 @@ public class Informacio extends AppCompatActivity {
     }
 
 
+    // Mètode per accedir a la finestra de Login per afegir stock
+    public void LoginEntradaStock(View view) {
+        Intent anterior = new Intent(this, LoginEntradaStock.class);
+        startActivity(anterior);
+    }
+
+
 
 }
