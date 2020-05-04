@@ -111,7 +111,7 @@ public class Dades extends AppCompatActivity {
         });
     }
 
-    private class CargarDatos extends AsyncTask<String, Void, String> {
+    public class CargarDatos extends AsyncTask<String, Void, String> {
         @Override
         protected String doInBackground(String... urls) {
 
@@ -131,7 +131,7 @@ public class Dades extends AppCompatActivity {
     }
 
 
-    private class ConsultarDatos extends AsyncTask<String, Void, String> {
+    public class ConsultarDatos extends AsyncTask<String, Void, String> {
         @Override
         protected String doInBackground(String... urls) {
 
@@ -175,7 +175,7 @@ public class Dades extends AppCompatActivity {
         }
     }
 
-    private String downloadUrl(String myurl) throws IOException {
+    public String downloadUrl(String myurl) throws IOException {
         Log.i("URL",""+myurl);
         myurl = myurl.replace(" ","%20");
         InputStream is = null;

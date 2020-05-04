@@ -45,6 +45,7 @@
         android:layout_marginEnd="8dp"
         android:background="#292630"
         android:letterSpacing="0.1"
+        android:onClick="SortidaStock"
         android:text="Afegir Taras"
         android:textColor="#FFFFFF"
         android:textSize="15dp"

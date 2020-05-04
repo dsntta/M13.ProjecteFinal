@@ -7,7 +7,7 @@
     tools:context=".ITXStock">
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/BtnSortida"
         android:layout_width="200dp"
         android:layout_height="40dp"
         android:layout_marginStart="8dp"
@@ -24,7 +24,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/et_codi_sortida"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
