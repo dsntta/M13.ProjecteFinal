@@ -26,6 +26,15 @@ public class Informacio extends AppCompatActivity {
         startActivity(anterior);
     }
 
+    public void In(View view) {
+        Intent anterior;
+        anterior = new Intent(this, Entrada.class);
+        startActivity(anterior);
+    }
+
+
+
+
 
 
 

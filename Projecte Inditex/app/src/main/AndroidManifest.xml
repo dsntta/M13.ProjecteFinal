@@ -12,7 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".Sortides"></activity>
+        <activity android:name=".Entrada"></activity>
+        <activity android:name=".Actualitza" />
+        <activity android:name=".Sortides" />
         <activity android:name=".Dades" />
         <activity android:name=".Seccio" />
         <activity android:name=".Informacio" />

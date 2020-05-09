@@ -18,31 +18,33 @@ import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class Sortides extends AppCompatActivity {
+public class Entrada extends AppCompatActivity {
 
 
     Button btnconsultar;
-    EditText etId;
-
+    EditText etId,etNom;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sortides);
+        setContentView(R.layout.activity_entrada);
 
-        btnconsultar = (Button)findViewById(R.id.btnSortida);
-        etId = (EditText)findViewById(R.id.etSortida);
+        btnconsultar = (Button)findViewById(R.id.btnEntrada);
+        etId = (EditText)findViewById(R.id.et_article_ent);
+
 
         btnconsultar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                new CargarDatos().execute("https://unsectarian-stack.000webhostapp.com/Android/sortida.php?id="+etId.getText().toString());
+                new CargarDatos().execute("https://unsectarian-stack.000webhostapp.com/Android/entrada.php?id="+etId.getText().toString());
+                //new CargarDatos().execute("http://10.0.3.2/CursoAndroid/registro.php?nombres="+etNombres.getText().toString()+"&tel="+etTelefono.getText().toString());
+
             }
         });
     }
 
-    // S
+
     private class CargarDatos extends AsyncTask<String, Void, String> {
         @Override
         protected String doInBackground(String... urls) {
@@ -58,11 +60,10 @@ public class Sortides extends AppCompatActivity {
         @Override
         protected void onPostExecute(String result) {
 
-            Toast.makeText(getApplicationContext(), "S'ha fet la sortida a central d'INDITEX ", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "S'han emmagatzemat les dades correctament", Toast.LENGTH_LONG).show();
 
         }
     }
-
 
     private String downloadUrl(String myurl) throws IOException {
         Log.i("URL",""+myurl);
@@ -98,7 +99,6 @@ public class Sortides extends AppCompatActivity {
         }
     }
 
-
     public String readIt(InputStream stream, int len) throws IOException, UnsupportedEncodingException {
         Reader reader = null;
         reader = new InputStreamReader(stream, "UTF-8");
@@ -106,4 +106,5 @@ public class Sortides extends AppCompatActivity {
         reader.read(buffer);
         return new String(buffer);
     }
+
 }
