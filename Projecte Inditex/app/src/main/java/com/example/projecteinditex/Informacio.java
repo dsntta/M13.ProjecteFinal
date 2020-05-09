@@ -21,8 +21,8 @@ public class Informacio extends AppCompatActivity {
         startActivity(anterior);
     }
 
-    public void SortidaStock(View view) {
-        Intent anterior = new Intent(this, ITXStock.class);
+    public void Exit(View view) {
+        Intent anterior = new Intent(this, Sortides.class);
         startActivity(anterior);
     }
 

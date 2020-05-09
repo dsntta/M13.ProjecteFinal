@@ -60,7 +60,6 @@ public class Dades extends AppCompatActivity {
         etTallaL_Botiga.setEnabled(false);
         etTallaXL_Botiga.setEnabled(false);
         etTallaXXL_Botiga.setEnabled(false);
-
         etTallaS_Magatzem.setEnabled(false);
         etTallaM_Magatzem.setEnabled(false);
         etTallaL_Magatzem.setEnabled(false);
@@ -80,7 +79,6 @@ public class Dades extends AppCompatActivity {
                 }else {
 
                     new ConsultarDatos().execute("https://unsectarian-stack.000webhostapp.com/Android/consulta.php?id="+etId.getText().toString());
-                    //new ConsultarDatos().execute("http://192.168.0.14/CursoAndroid/consulta.php?id="+etId.getText().toString());
                 }
             }
         });
