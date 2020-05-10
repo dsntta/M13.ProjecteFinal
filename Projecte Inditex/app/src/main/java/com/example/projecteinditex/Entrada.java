@@ -21,8 +21,8 @@ import java.net.URL;
 public class Entrada extends AppCompatActivity {
 
 
-    Button btnconsultar;
-    EditText etId,etNom;
+    Button btnconsultar,btnReset;
+    EditText etId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +30,7 @@ public class Entrada extends AppCompatActivity {
         setContentView(R.layout.activity_entrada);
 
         btnconsultar = (Button)findViewById(R.id.btnEntrada);
+        btnReset = (Button)findViewById(R.id.btnReset_Entrada);
         etId = (EditText)findViewById(R.id.et_article_ent);
 
 
@@ -37,11 +38,25 @@ public class Entrada extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                new CargarDatos().execute("https://unsectarian-stack.000webhostapp.com/Android/entrada.php?id="+etId.getText().toString());
-                //new CargarDatos().execute("http://10.0.3.2/CursoAndroid/registro.php?nombres="+etNombres.getText().toString()+"&tel="+etTelefono.getText().toString());
+                if (etId.getText().toString().isEmpty()) {
+                    Toast.makeText(getApplicationContext(), "Indrodueix el codi de l'article", Toast.LENGTH_LONG).show();
+                    etId.setText("");
+
+                }else {
+                    new CargarDatos().execute("https://unsectarian-stack.000webhostapp.com/Android/entrada.php?id="+etId.getText().toString());
+                }
+            }
+        });
+
+        btnReset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                etId.setText("");
 
             }
         });
+
     }
 
 

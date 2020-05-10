@@ -20,8 +20,8 @@ import java.net.URL;
 
 public class Actualitza extends AppCompatActivity {
 
-    Button btnconsultar;
-    EditText etId,producte;
+    Button btnconsultar,btnReset;
+    EditText etId,talla,ubicacio;
 
 
     @Override
@@ -29,19 +29,92 @@ public class Actualitza extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_actualitza);
 
-        btnconsultar = (Button)findViewById(R.id.btnConsultar);
+        btnconsultar = (Button)findViewById(R.id.btnCorrecio);
 
-        etId = (EditText)findViewById(R.id.codi_update);
+        etId = (EditText)findViewById(R.id.et_article_corr);
 
-        producte = (EditText)findViewById(R.id.etArticle);
+        ubicacio = (EditText)findViewById(R.id.et_ubicacio_corr);
+
+        talla = (EditText)findViewById(R.id.et_talla_corr);
+
+        btnReset = (Button)findViewById(R.id.btnResetCorrecio);
 
 
         btnconsultar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-               // new CargarDatos().execute("http://10.0.3.2/CursoAndroid/registro.php?nombres="+etNombres.getText().toString()+"&tel="+etTelefono.getText().toString());
+                // Condició que comprova si tots els camps están plens, si hi ha un buit et demanará que els emplenis
+                if (etId.getText().toString().isEmpty() || ubicacio.getText().toString().isEmpty() || talla.getText().toString().isEmpty()  ) {
+                    Toast.makeText(getApplicationContext(), "Has d'emplenar tot els camps", Toast.LENGTH_LONG).show();
+                    etId.setText("");
 
+                // Condició que comprova l'ubicació, és a dir, si es 0 es magatzem i si es 1 es botiga
+                }else {
+
+                    // Correcció a Magatzem
+                    if ( ubicacio.getText().toString().equals("0")) {
+
+                        // Talla S Magatzem
+                        if (talla.getText().toString().equals("1")) {
+                            new CargarDatos().execute("https://unsectarian-stack.000webhostapp.com/Android/updateS_magatzem.php?id="+etId.getText().toString());
+                        }
+
+                        // Talla M Magatzem
+                        else if (talla.getText().toString().equals("2")) {
+                            new CargarDatos().execute("https://unsectarian-stack.000webhostapp.com/Android/updateM_magatzem.php?id="+etId.getText().toString());
+                        }
+
+                        // Talla L Magatzem
+                        else if (talla.getText().toString().equals("3")) {
+                            new CargarDatos().execute("https://unsectarian-stack.000webhostapp.com/Android/updateL_magatzem.php?id="+etId.getText().toString());
+                        }
+
+                        // Talla XL Magatzem
+                        else if (talla.getText().toString().equals("4")) {
+                            new CargarDatos().execute("https://unsectarian-stack.000webhostapp.com/Android/updateXL_magatzem.php?id="+etId.getText().toString());
+                        }
+                        // Talla XXL Magatzem
+                        else if (talla.getText().toString().equals("5")) {
+                            new CargarDatos().execute("https://unsectarian-stack.000webhostapp.com/Android/updateXXL_magatzem.php?id="+etId.getText().toString());
+                        }
+
+                        else {
+                            Toast.makeText(getApplicationContext(), "Tala no vàlida, introdueix una talla de 1 a 5", Toast.LENGTH_LONG).show();
+                        }
+
+                    // Correcció a Botiga
+                    }else if ( ubicacio.getText().toString().equals("1")) {
+
+                        // Talla S Botiga
+                        if (talla.getText().toString().equals("1")) {
+                            new CargarDatos().execute("https://unsectarian-stack.000webhostapp.com/Android/updateS_botiga.php?id="+etId.getText().toString());
+                        }
+
+                        // Talla M Botiga
+                        if (talla.getText().toString().equals("2")) {
+                            new CargarDatos().execute("https://unsectarian-stack.000webhostapp.com/Android/updateM_botiga.php?id="+etId.getText().toString());
+                        }
+
+                        // Talla L Botiga
+                        if (talla.getText().toString().equals("3")) {
+                            new CargarDatos().execute("https://unsectarian-stack.000webhostapp.com/Android/updateL_botiga.php?id="+etId.getText().toString());
+                        }
+
+                        // Talla XL Botiga
+                        if (talla.getText().toString().equals("1")) {
+                            new CargarDatos().execute("https://unsectarian-stack.000webhostapp.com/Android/updateXL_botiga.php?id="+etId.getText().toString());
+                        }
+
+                        // Talla XXL Botiga
+                        if (talla.getText().toString().equals("1")) {
+                            new CargarDatos().execute("https://unsectarian-stack.000webhostapp.com/Android/updateXXL_botiga.php?id="+etId.getText().toString());
+                        }
+
+                    }else {
+                        Toast.makeText(getApplicationContext(), "Ubicació no vàlida, sisplau introdueix una ubicació vàlida", Toast.LENGTH_LONG).show();
+                    }
+                }
             }
         });
 
@@ -62,7 +135,8 @@ public class Actualitza extends AppCompatActivity {
         @Override
         protected void onPostExecute(String result) {
 
-            Toast.makeText(getApplicationContext(), "Se almacenaron los datos correctamente", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "correcció feta amb èxit", Toast.LENGTH_LONG).show();
+            etId.setText("");
 
         }
     }
@@ -108,9 +182,4 @@ public class Actualitza extends AppCompatActivity {
         reader.read(buffer);
         return new String(buffer);
     }
-
-
-
-
-
 }

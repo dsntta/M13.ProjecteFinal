@@ -21,7 +21,7 @@ import java.net.URL;
 public class Sortides extends AppCompatActivity {
 
 
-    Button btnconsultar;
+    Button btnconsultar,btnreset;
     EditText etId;
 
 
@@ -31,6 +31,7 @@ public class Sortides extends AppCompatActivity {
         setContentView(R.layout.activity_sortides);
 
         btnconsultar = (Button)findViewById(R.id.btnSortida);
+        btnreset = (Button)findViewById(R.id.btnReset_Sort);
         etId = (EditText)findViewById(R.id.etSortida);
 
         btnconsultar.setOnClickListener(new View.OnClickListener() {
@@ -40,6 +41,18 @@ public class Sortides extends AppCompatActivity {
                 new CargarDatos().execute("https://unsectarian-stack.000webhostapp.com/Android/sortida.php?id="+etId.getText().toString());
             }
         });
+
+
+        btnreset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+               etId.setText("");
+            }
+        });
+
+
+
     }
 
     // S

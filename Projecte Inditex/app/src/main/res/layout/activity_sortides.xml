@@ -37,7 +37,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnReset2"
+        android:id="@+id/btnReset_Sort"
         android:layout_width="200dp"
         android:layout_height="40dp"
         android:layout_marginStart="8dp"
