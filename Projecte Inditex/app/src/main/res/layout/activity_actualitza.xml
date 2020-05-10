@@ -6,34 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".Actualitza">
 
-    <Button
-        android:id="@+id/btnResetCorrecio"
-        android:layout_width="200dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="384dp"
-        android:layout_marginEnd="8dp"
-        android:background="#292630"
-        android:letterSpacing="0.1"
-        android:text="CORREGIR"
-        android:textColor="#FFFFFF"
-        android:textSize="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.41"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <EditText
         android:id="@+id/et_talla_corr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="248dp"
+        android:layout_marginTop="236dp"
         android:background="@android:drawable/alert_light_frame"
         android:ems="10"
         android:hint="Talla"
-        android:inputType="text"
+        android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -45,7 +28,7 @@
         android:background="@android:drawable/alert_light_frame"
         android:ems="10"
         android:hint="Ubicació"
-        android:inputType="text"
+        android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
@@ -70,7 +53,7 @@
         android:layout_width="200dp"
         android:layout_height="40dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="324dp"
+        android:layout_marginTop="308dp"
         android:layout_marginEnd="8dp"
         android:background="#292630"
         android:letterSpacing="0.1"

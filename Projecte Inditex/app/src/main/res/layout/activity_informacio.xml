@@ -6,39 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".Informacio">
 
-    <Button
-        android:id="@+id/buttonHome6"
-        android:layout_width="200dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="388dp"
-        android:layout_marginEnd="8dp"
-        android:background="#292630"
-        android:letterSpacing="0.1"
-        android:onClick="Exit"
-        android:text="Sortida Stock"
-        android:textColor="#FFFFFF"
-        android:textSize="15dp"
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="136dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="60dp"
+        android:text="25R"
+        android:textColor="@color/colorAccent"
+        android:textColorLink="@color/colorPrimary"
+        android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.451"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/buttonHome8"
-        android:layout_width="200dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="456dp"
-        android:layout_marginEnd="8dp"
-        android:background="#292630"
-        android:letterSpacing="0.1"
-        android:onClick="Anterior"
-        android:text="Tornar al principi"
-        android:textColor="#FFFFFF"
-        android:textSize="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.451"
+        app:layout_constraintHorizontal_bias="0.545"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -55,11 +33,28 @@
         app:layout_constraintVertical_bias="0.995" />
 
     <Button
+        android:id="@+id/buttonHome2"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="132dp"
+        android:layout_marginEnd="8dp"
+        android:background="#292630"
+        android:letterSpacing="0.1"
+        android:text="Moviment a botiga"
+        android:textColor="#FFFFFF"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.451"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
         android:id="@+id/buttonHome5"
         android:layout_width="200dp"
         android:layout_height="40dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="324dp"
+        android:layout_marginTop="308dp"
         android:layout_marginEnd="8dp"
         android:background="#292630"
         android:letterSpacing="0.1"
@@ -73,11 +68,29 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:id="@+id/buttonHome6"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="372dp"
+        android:layout_marginEnd="8dp"
+        android:background="#292630"
+        android:letterSpacing="0.1"
+        android:onClick="Exit"
+        android:text="Sortida Stock"
+        android:textColor="#FFFFFF"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.451"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
         android:id="@+id/buttonHome4"
         android:layout_width="200dp"
         android:layout_height="40dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="264dp"
+        android:layout_marginTop="248dp"
         android:layout_marginEnd="8dp"
         android:background="#292630"
         android:letterSpacing="0.1"
@@ -91,11 +104,29 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:id="@+id/buttonHome8"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="440dp"
+        android:layout_marginEnd="8dp"
+        android:background="#292630"
+        android:letterSpacing="0.1"
+        android:onClick="Anterior"
+        android:text="Tornar al principi"
+        android:textColor="#FFFFFF"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.451"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
         android:id="@+id/buttonHome3"
         android:layout_width="200dp"
         android:layout_height="40dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="204dp"
+        android:layout_marginTop="188dp"
         android:layout_marginEnd="8dp"
         android:background="#292630"
         android:letterSpacing="0.1"
@@ -106,37 +137,5 @@
         app:layout_constraintHorizontal_bias="0.451"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/buttonHome2"
-        android:layout_width="200dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="148dp"
-        android:layout_marginEnd="8dp"
-        android:background="#292630"
-        android:letterSpacing="0.1"
-        android:text="Moviment a botiga"
-        android:textColor="#FFFFFF"
-        android:textSize="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.451"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="81dp"
-        android:layout_height="69dp"
-        android:layout_marginBottom="44dp"
-        android:text="25R"
-        android:textColor="@color/colorAccent"
-        android:textColorLink="@color/colorPrimary"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonHome2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

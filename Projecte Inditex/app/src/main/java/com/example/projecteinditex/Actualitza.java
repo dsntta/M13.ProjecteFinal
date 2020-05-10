@@ -20,7 +20,7 @@ import java.net.URL;
 
 public class Actualitza extends AppCompatActivity {
 
-    Button btnconsultar,btnReset;
+    Button btnconsultar;
     EditText etId,talla,ubicacio;
 
 
@@ -36,8 +36,6 @@ public class Actualitza extends AppCompatActivity {
         ubicacio = (EditText)findViewById(R.id.et_ubicacio_corr);
 
         talla = (EditText)findViewById(R.id.et_talla_corr);
-
-        btnReset = (Button)findViewById(R.id.btnResetCorrecio);
 
 
         btnconsultar.setOnClickListener(new View.OnClickListener() {
@@ -117,7 +115,6 @@ public class Actualitza extends AppCompatActivity {
                 }
             }
         });
-
     }
 
     private class CargarDatos extends AsyncTask<String, Void, String> {

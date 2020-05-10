@@ -34,7 +34,7 @@ public class Informacio extends AppCompatActivity {
 
     public void Update(View view) {
         Intent anterior;
-        anterior = new Intent(this, Actualitza.class);
+        anterior = new Intent(this, Opcions.class);
         startActivity(anterior);
     }
 
