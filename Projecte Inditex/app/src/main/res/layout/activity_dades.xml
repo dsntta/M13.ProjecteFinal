@@ -75,7 +75,7 @@
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="72dp"
         android:text="Preu"
         android:textColor="@color/colorAccent"
         app:layout_constraintEnd_toEndOf="parent"

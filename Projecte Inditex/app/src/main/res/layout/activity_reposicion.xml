@@ -6,6 +6,76 @@
     android:layout_height="match_parent"
     tools:context=".Reposicion">
 
+    <EditText
+        android:id="@+id/tallaL_article_repo"
+        android:layout_width="301dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="304dp"
+        android:background="@android:drawable/alert_light_frame"
+        android:ems="10"
+        android:hint="Nom"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.39"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/tallaM_article_repo"
+        android:layout_width="301dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="256dp"
+        android:background="@android:drawable/alert_light_frame"
+        android:ems="10"
+        android:hint="Nom"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.39"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/tallaS_article_repo"
+        android:layout_width="301dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="200dp"
+        android:background="@android:drawable/alert_light_frame"
+        android:ems="10"
+        android:hint="Nom"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.39"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/desc_article_repo"
+        android:layout_width="301dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="144dp"
+        android:background="@android:drawable/alert_light_frame"
+        android:ems="10"
+        android:hint="Nom"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.39"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/codi_article_repo"
+        android:layout_width="301dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="88dp"
+        android:background="@android:drawable/alert_light_frame"
+        android:ems="10"
+        android:hint="Codi Article"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.39"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/button2"
         android:layout_width="30dp"
