@@ -22,7 +22,7 @@ public class Entrada extends AppCompatActivity {
 
 
     Button btnconsultar,btnReset;
-    EditText etId,etNomArticle;
+    EditText etId,etNomArticle,etTallaS,etTallaM,etTallaL,etTallaXL,etTallaXXL;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,20 +34,24 @@ public class Entrada extends AppCompatActivity {
         etId = (EditText)findViewById(R.id.et_article_ent);
         etNomArticle = (EditText)findViewById(R.id.nom_article_ent);
 
-
+        etTallaS = (EditText)findViewById(R.id.talla_s_ent);
+        etTallaM = (EditText)findViewById(R.id.talla_m_ent);
+        etTallaL = (EditText)findViewById(R.id.talla_l_ent);
+        etTallaXL = (EditText)findViewById(R.id.talla_xl_ent);
+        etTallaXXL = (EditText)findViewById(R.id.talla_xxl_ent);
 
         btnconsultar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                if (etId.getText().toString().isEmpty()) {
-                    Toast.makeText(getApplicationContext(), "Indrodueix el codi de l'article", Toast.LENGTH_LONG).show();
-                    etId.setText("");
+                if (etId.getText().toString().isEmpty() && etNomArticle.getText().toString().isEmpty() ) {
+                    Toast.makeText(getApplicationContext(), "Heu d'emplenar tots els camps", Toast.LENGTH_LONG).show();
+
 
                 }else {
-                    //new CargarDatos().execute("https://unsectarian-stack.000webhostapp.com/Android/entrada.php?id="+etId.getText().toString());
-
-                    new CargarDatos().execute("https://unsectarian-stack.000webhostapp.com/Android/entrada.php?id="+etId.getText().toString()+"&tel="+etNomArticle.getText().toString());
+                    new CargarDatos().execute("https://unsectarian-stack.000webhostapp.com/Android/entrada.php?id="+etId.getText().toString()
+                            +"&tel="+etNomArticle.getText().toString() +"&s="+etTallaS.getText().toString() +"&m="+etTallaM.getText().toString()
+                            +"&l="+etTallaL.getText().toString() +"&xl="+etTallaXL.getText().toString() +"&xxl="+etTallaXXL.getText().toString());
                 }
             }
         });
@@ -58,6 +62,11 @@ public class Entrada extends AppCompatActivity {
 
                 etId.setText("");
                 etNomArticle.setText("");
+                etTallaS.setText("");
+                etTallaM.setText("");
+                etTallaL.setText("");
+                etTallaXL.setText("");
+                etTallaXXL.setText("");
 
             }
         });
@@ -83,6 +92,11 @@ public class Entrada extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "S'han emmagatzemat les dades correctament", Toast.LENGTH_LONG).show();
             etId.setText("");
             etNomArticle.setText("");
+            etTallaS.setText("");
+            etTallaM.setText("");
+            etTallaL.setText("");
+            etTallaXL.setText("");
+            etTallaXXL.setText("");
 
         }
     }
