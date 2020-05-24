@@ -22,7 +22,7 @@ public class Entrada extends AppCompatActivity {
 
 
     Button btnconsultar,btnReset;
-    EditText etId;
+    EditText etId,etNomArticle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +32,8 @@ public class Entrada extends AppCompatActivity {
         btnconsultar = (Button)findViewById(R.id.btnEntrada);
         btnReset = (Button)findViewById(R.id.btnReset_Entrada);
         etId = (EditText)findViewById(R.id.et_article_ent);
+        etNomArticle = (EditText)findViewById(R.id.nom_article_ent);
+
 
 
         btnconsultar.setOnClickListener(new View.OnClickListener() {
@@ -43,7 +45,9 @@ public class Entrada extends AppCompatActivity {
                     etId.setText("");
 
                 }else {
-                    new CargarDatos().execute("https://unsectarian-stack.000webhostapp.com/Android/entrada.php?id="+etId.getText().toString());
+                    //new CargarDatos().execute("https://unsectarian-stack.000webhostapp.com/Android/entrada.php?id="+etId.getText().toString());
+
+                    new CargarDatos().execute("https://unsectarian-stack.000webhostapp.com/Android/entrada.php?id="+etId.getText().toString()+"&tel="+etNomArticle.getText().toString());
                 }
             }
         });
@@ -53,6 +57,7 @@ public class Entrada extends AppCompatActivity {
             public void onClick(View v) {
 
                 etId.setText("");
+                etNomArticle.setText("");
 
             }
         });
@@ -76,6 +81,8 @@ public class Entrada extends AppCompatActivity {
         protected void onPostExecute(String result) {
 
             Toast.makeText(getApplicationContext(), "S'han emmagatzemat les dades correctament", Toast.LENGTH_LONG).show();
+            etId.setText("");
+            etNomArticle.setText("");
 
         }
     }
