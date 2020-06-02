@@ -1,10 +1,17 @@
 package com.example.projecteinditex;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+/**
+ * Titol: MainActivity
+ * Desc: Classe Principal a on comença la nostra aplicació
+ * @author Marcos Di Santacroce
+ * @version versió 1.0
+ */
+
 
 public class MainActivity extends AppCompatActivity {
 

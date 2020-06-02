@@ -1,7 +1,5 @@
 package com.example.projecteinditex;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -9,10 +7,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import org.json.JSONArray;
 import org.json.JSONException;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -21,9 +17,18 @@ import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+
+/**
+ * Titol: Reposicion
+ * Desc: Classe que ens genera un llistat dels articles que haurem de treure a botiga
+ * @author Marcos Di Santacroce
+ * @version versió 1.0
+ */
+
+
 public class Reposicion extends AppCompatActivity {
 
-
+    // Declaració dels components
     EditText etId, etDesc,etPreu;
     EditText etTallaS_Magatzem,etTallaS,etTallaM,etTallaL;
 
@@ -32,14 +37,13 @@ public class Reposicion extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reposicion);
 
-
-
         etId = (EditText)findViewById(R.id.codi_article_repo);
         etDesc = (EditText)findViewById(R.id.desc_article_repo);
         etTallaS = (EditText)findViewById(R.id.tallaS_article_repo);
         etTallaM = (EditText)findViewById(R.id.tallaM_article_repo);
         etTallaL = (EditText)findViewById(R.id.tallaL_article_repo);
 
+        // Només visualització
         etId.setEnabled(false);
         etDesc.setEnabled(false);
         etTallaS.setEnabled(false);
@@ -47,10 +51,6 @@ public class Reposicion extends AppCompatActivity {
         etTallaL.setEnabled(false);
 
         new ConsultarDatos().execute("https://unsectarian-stack.000webhostapp.com/Android/consultaRepo.php");
-
-
-
-
     }
 
     public class CargarDatos extends AsyncTask<String, Void, String> {

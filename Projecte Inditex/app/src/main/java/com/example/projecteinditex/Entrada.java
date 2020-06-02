@@ -1,7 +1,5 @@
 package com.example.projecteinditex;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,7 +7,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -18,12 +15,24 @@ import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+/**
+ * Titol: Entrada
+ * Desc: Classe que ens guardará contingut a la nostra base de dades el Stock que entra a magatzem
+ * @author Marcos Di Santacroce
+ * @version versió 1.0
+ */
+
+
 public class Entrada extends AppCompatActivity {
 
+
+    // Declaració dels components
 
     Button btnconsultar,btnReset;
     EditText etId,etNomArticle,etTallaS,etTallaM,etTallaL,etTallaXL,etTallaXXL;
 
+
+    // Instancia principal (Quan carrega l'Activity)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,13 +42,14 @@ public class Entrada extends AppCompatActivity {
         btnReset = (Button)findViewById(R.id.btnReset_Entrada);
         etId = (EditText)findViewById(R.id.et_article_ent);
         etNomArticle = (EditText)findViewById(R.id.nom_article_ent);
-
         etTallaS = (EditText)findViewById(R.id.talla_s_ent);
         etTallaM = (EditText)findViewById(R.id.talla_m_ent);
         etTallaL = (EditText)findViewById(R.id.talla_l_ent);
         etTallaXL = (EditText)findViewById(R.id.talla_xl_ent);
         etTallaXXL = (EditText)findViewById(R.id.talla_xxl_ent);
 
+
+        // Botó Consultar, fa la consulta a la base de dades amb el codi que li enviem a través de mètode GET
         btnconsultar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,6 +66,7 @@ public class Entrada extends AppCompatActivity {
             }
         });
 
+        // Botó que deixa tots els EditText en blanc, per un altre cerca
         btnReset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,9 +81,7 @@ public class Entrada extends AppCompatActivity {
 
             }
         });
-
     }
-
 
     private class CargarDatos extends AsyncTask<String, Void, String> {
         @Override
@@ -85,10 +94,10 @@ public class Entrada extends AppCompatActivity {
                 return "Unable to retrieve web page. URL may be invalid.";
             }
         }
-        // onPostExecute displays the results of the AsyncTask.
+
+        // Si s'executa amb èxit, s'executa aquest mètode
         @Override
         protected void onPostExecute(String result) {
-
             Toast.makeText(getApplicationContext(), "S'han emmagatzemat les dades correctament", Toast.LENGTH_LONG).show();
             etId.setText("");
             etNomArticle.setText("");
@@ -97,10 +106,11 @@ public class Entrada extends AppCompatActivity {
             etTallaL.setText("");
             etTallaXL.setText("");
             etTallaXXL.setText("");
-
         }
     }
 
+
+    // Mètode a on connectem amb la base de dades
     private String downloadUrl(String myurl) throws IOException {
         Log.i("URL",""+myurl);
         myurl = myurl.replace(" ","%20");
@@ -135,6 +145,8 @@ public class Entrada extends AppCompatActivity {
         }
     }
 
+
+    // Mètode que llegeix el contingut
     public String readIt(InputStream stream, int len) throws IOException, UnsupportedEncodingException {
         Reader reader = null;
         reader = new InputStreamReader(stream, "UTF-8");
@@ -142,5 +154,4 @@ public class Entrada extends AppCompatActivity {
         reader.read(buffer);
         return new String(buffer);
     }
-
 }

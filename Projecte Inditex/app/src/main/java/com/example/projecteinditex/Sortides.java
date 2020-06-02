@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -18,9 +17,16 @@ import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+/**
+ * Titol: Sortides
+ * Desc: Classe que fem la sortida de stock a la central d'Inditex
+ * @author Marcos Di Santacroce
+ * @version versió 1.0
+ */
+
 public class Sortides extends AppCompatActivity {
 
-
+    // Declaració dels components
     Button btnconsultar,btnreset;
     EditText etId;
 
@@ -34,15 +40,23 @@ public class Sortides extends AppCompatActivity {
         btnreset = (Button)findViewById(R.id.btnReset_Sort);
         etId = (EditText)findViewById(R.id.etSortida);
 
+        // Botó que executa la sortida
         btnconsultar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                new CargarDatos().execute("https://unsectarian-stack.000webhostapp.com/Android/sortida.php?id="+etId.getText().toString());
+                if (etId.getText().toString().isEmpty()) {
+
+                    Toast.makeText(getApplicationContext(), "Has de posar el codi de l'article", Toast.LENGTH_LONG).show();
+                }else {
+
+                    new CargarDatos().execute("https://unsectarian-stack.000webhostapp.com/Android/sortida.php?id="+etId.getText().toString());
+                }
             }
         });
 
 
+        // Botó per deixar en blanc el EditText del codi
         btnreset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -50,12 +64,8 @@ public class Sortides extends AppCompatActivity {
                etId.setText("");
             }
         });
-
-
-
     }
 
-    // S
     private class CargarDatos extends AsyncTask<String, Void, String> {
         @Override
         protected String doInBackground(String... urls) {

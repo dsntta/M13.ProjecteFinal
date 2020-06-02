@@ -1,7 +1,5 @@
 package com.example.projecteinditex;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -18,8 +16,17 @@ import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+/**
+ * Titol: Actualitza
+ * Desc: Classe que ens permet fer canvi d'ubicació
+ * @author Marcos Di Santacroce
+ * @version versió 1.0
+ */
+
+
 public class Actualitza extends AppCompatActivity {
 
+    // Declaració dels components
     Button btnconsultar;
     EditText etId,talla,ubicacio;
 
@@ -30,11 +37,8 @@ public class Actualitza extends AppCompatActivity {
         setContentView(R.layout.activity_actualitza);
 
         btnconsultar = (Button)findViewById(R.id.btnCorrecio);
-
         etId = (EditText)findViewById(R.id.et_article_corr);
-
         ubicacio = (EditText)findViewById(R.id.et_ubicacio_corr);
-
         talla = (EditText)findViewById(R.id.et_talla_corr);
 
 

@@ -1,10 +1,17 @@
 package com.example.projecteinditex;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+/**
+ * Titol: Informacio
+ * Desc: Classe amb mètodes per passar d'un Activity a un altre
+ * @author Marcos Di Santacroce
+ * @version versió 1.0
+ */
+
+
 
 public class Informacio extends AppCompatActivity {
 
